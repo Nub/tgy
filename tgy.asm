@@ -163,7 +163,7 @@
 .equ	BOOT_START	= THIRDBOOTSTART
 
 .if !defined(COMP_PWM)
-.equ	COMP_PWM	= 0	; During PWM off, switch high side on (unsafe on some boards!)
+.equ	COMP_PWM	= 1	; During PWM off, switch high side on (unsafe on some boards!)
 .endif
 .if !defined(DEAD_LOW_NS)
 .equ	DEAD_LOW_NS	= 300	; Low-side dead time w/COMP_PWM (62.5ns steps @ 16MHz, max 2437ns)
@@ -253,7 +253,7 @@
 .equ	TIMING_RANGE1	= 0x4000 ; 4096us per commutation
 .equ	TIMING_RANGE2	= 0x2000 ; 2048us per commutation
 .equ	TIMING_RANGE3	= 0x1000 ; 1024us per commutation
-.equ	TIMING_MAX	= 0x00e0 ; 56us per commutation
+.equ	TIMING_MAX	= 0x0080 ; 32us per commutation
 
 .equ	TIMEOUT_START	= 48000	; Timeout per commutation for ZC during starting
 .if !defined(START_DELAY_US)
